@@ -1,8 +1,8 @@
 
 #To Do:
-#Is my math even right?
-#edge cases 1, 0 negatives?
-#What's going on with my while loop in find_first_factor?
+#Completed edge cases 1, 0 negatives 
+#Handle floats?
+#Completed What's going on with my while loop in find_first_factor?
 #optimize checking for factors
 #remove prints when they are no longer needed for testing
 #implement console input of number to check
@@ -11,26 +11,32 @@
 
 def find_first_factor(factorof):
   print("Finding first factor of: ", factorof)
-  foundfactor = False
+
   testingfactor = 2
-  while (foundfactor == False):
-    print("Testing factor:", testingfactor)
+  while (True):
+    #print("Testing factor:", testingfactor)
     if factorof % testingfactor == 0:
-      foundfactor = True
-      print("Found first Factor: ", testingfactor)
-      return testingfactor
+        print("Found first Factor: ", testingfactor)
+        return testingfactor
     else:
-      testingfactor = testingfactor + 1
+        testingfactor = testingfactor + 1
 
 
 def find_largest_pf(numbertotest):
-  inversefactor = numbertotest
-  while (inversefactor == numbertotest):
-    inversefactor = numbertotest // find_first_factor(numbertotest)
-    if inversefactor == 1: 
-      return numbertotest
-    else:
-      numbertotest = inversefactor
-print ("Largest prime of factor is: ", find_largest_pf(70))
+    if numbertotest <= 1:
+        numbertotest = numbertotest * -1
+    if numbertotest == 1:
+        return None
+    if numbertotest == 0:
+        return None
+    inversefactor = numbertotest
+    while (inversefactor == numbertotest):
+        inversefactor = numbertotest // find_first_factor(numbertotest)
+        if inversefactor == 1: 
+            return numbertotest
+        else:
+            numbertotest = inversefactor
+
+print ("Largest prime of factor is: ", find_largest_pf(600851475143))
   
 
