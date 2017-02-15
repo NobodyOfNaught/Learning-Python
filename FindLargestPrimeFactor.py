@@ -37,6 +37,8 @@ def find_largest_pf(numbertotest):
         else:
             numbertotest = inversefactor
 
-print ("Largest prime of factor is: ", find_largest_pf(600851475143))
-  
+testingnumber = int(input('Enter number to test for Largest Prime Factor: '))
+
+print ("Largest prime of factor is: ", find_largest_pf(testingnumber))
+
 
