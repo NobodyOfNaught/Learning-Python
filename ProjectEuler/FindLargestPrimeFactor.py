@@ -10,16 +10,16 @@
 
 
 def find_first_factor(factorof):
-  print("Finding first factor of: ", factorof)
+    print("Finding first factor of: ", factorof)
 
-  testingfactor = 2
-  while (True):
-    #print("Testing factor:", testingfactor)
-    if factorof % testingfactor == 0:
-        print("Found first Factor: ", testingfactor)
-        return testingfactor
-    else:
-        testingfactor = testingfactor + 1
+    testingfactor = 2
+    while (True):
+        #print("Testing factor:", testingfactor)
+        if factorof % testingfactor == 0:
+            print("Found first Factor: ", testingfactor)
+            return testingfactor
+        else:
+            testingfactor = testingfactor + 1
 
 
 def find_largest_pf(numbertotest):
